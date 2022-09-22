@@ -39,7 +39,7 @@ def project():
         )
         print("Data connected successfuly.")
         cursor = mydb.cursor()
-        sql = "select * from employees"
+        sql = "select id, emp_name, emp_phone, emp_sal from employees"
 
         cursor.execute(sql)
         result = cursor.fetchall()
@@ -178,42 +178,44 @@ def project():
 
     root = tk.Tk()
     root.geometry("800x500")
-    l1 = tk.Label(root, text = "REGISTRATION FORM", font = ("Times", 14, "bold", "underline"))
+    root.title("Registration Form")
+    root["bg"] = "black" 
+    l1 = tk.Label(root, text = "REGISTRATION FORM", font = ("Times", 14, "bold", "underline"), bg = "#636363")
     l1.place(x = 300, y = 5)
 
-    l2 = tk.Label(root, text = "Employee ID").place(x = 10, y = 50)
+    l2 = tk.Label(root, text = "Employee ID", bg="#636363").place(x = 10, y = 50)
 
     e1 = tk.Entry(root)
     e1.place(x = 140, y = 50)
 
-    l3 = tk.Label(root, text = "Employee Name").place(x = 10, y = 90)
+    l3 = tk.Label(root, text = "Employee Name", bg = "#636363").place(x = 10, y = 90)
 
     e2 = tk.Entry(root)
     e2.place(x = 140, y = 90)
 
-    l4 = tk.Label(root, text = "Mobile Number").place(x = 10, y = 130)
+    l4 = tk.Label(root, text = "Mobile Number", bg = "#636363").place(x = 10, y = 130)
 
     e3 = tk.Entry(root)
     e3.place(x = 140, y = 130)
 
-    l5 = tk.Label(root, text = "Salary").place(x = 10, y = 170)
+    l5 = tk.Label(root, text = "Salary", bg = "#636363").place(x = 10, y = 170)
 
     e4 = tk.Entry(root)
     e4.place(x = 140, y = 170)
 
-    b1 = tk.Button(root, text = "Add", command = add, height=1, width=12).place(x = 30, y = 210)
+    b1 = tk.Button(root, text = "Add", command = add, height=1, width=12, bg="#636363").place(x = 30, y = 210)
 
-    b2 = tk.Button(root, text = "Delete", command = delete, height=1, width=12).place(x = 130, y= 210)
+    b2 = tk.Button(root, text = "Delete", command = delete, height=1, width=12, bg="#636363").place(x = 130, y= 210)
 
-    b3 = tk.Button(root, text = "Search by ID", command = searchid, height=1, width=12).place(x=230, y= 210)
+    b3 = tk.Button(root, text = "Search by ID", command = searchid, height=1, width=12, bg="#636363").place(x=230, y= 210)
 
-    b4 = tk.Button(root, text = "Search by Name", command = searchname, height=1, width=12).place(x=330, y=210)
+    b4 = tk.Button(root, text = "Search by Name", command = searchname, height=1, width=12, bg="#636363").place(x=330, y=210)
 
-    b5 = tk.Button(root, text = "Update", command=update, height=1, width = 12).place(x=430, y = 210)
+    b5 = tk.Button(root, text = "Update", command=update, height=1, width = 12, bg="#636363").place(x=430, y = 210)
 
-    b6 = tk.Button(root, text = "Clear", command = clear, height = 1, width = 12).place(x = 530, y = 210)
+    b6 = tk.Button(root, text = "Clear", command = clear, height = 1, width = 12, bg="#636363").place(x = 530, y = 210)
 
-    b7 = tk.Button(root, text = "Sort", command = sort, height = 1, width = 15).place(x = 630, y = 210)
+    b7 = tk.Button(root, text = "Sort", command = sort, height = 1, width = 15, bg = "#636363").place(x = 630, y = 210)
 
     colum = ("emp_id", "emp_name", "emp_mob", "emp_sal")
 
@@ -253,20 +255,28 @@ def check_info():
         messagebox.showinfo("Information", "Username/Password Incorrect")
         exit()
     
+
+
+
 root_1 = tk.Tk()
 root_1.geometry("800x500")
-ll1 = tk.Label(root_1, text = "ENTER USERNAME AND PASSWORD", font = ("Times", 14, "bold", "underline")).place(x = 300, y = 5)
+root_1.title("Login Page")
+root_1["bg"] = "black"
+ll1 = tk.Label(root_1, text = "Login Page", font = ("Times", 14, "bold", "underline"), bg = "#636363").place(x = 300, y = 5)
 
-ll2 = tk.Label(root_1, text = "Username").place(x = 10, y = 50)
+ll2 = tk.Label(root_1, text = "Username", bg = "#636363").place(x = 10, y = 50)
 
 ee1 = tk.Entry(root_1)
 ee1.place(x = 140, y = 50)
 
-ll3 = tk.Label(root_1, text = "Password").place(x = 10, y = 90)
+ll3 = tk.Label(root_1, text = "Password", bg = "#636363").place(x = 10, y = 90)
 
 ee2 = tk.Entry(root_1)
 ee2.place(x = 140, y = 90)
-bb1 = tk.Button(root_1, text = "Submit", command = check_info, height=1, width=12).place(x = 30, y= 210)
-
+bb1 = tk.Button(root_1, text = "Submit", command = check_info, height=1, width=12, bg = "#636363").place(x = 30, y= 210)
+image_1 = tk.PhotoImage(file = r"C:\Users\User\OneDrive\Documents\GitHub\employee-db\Python Files\hi2.png")
+l4 = tk.Label(image = image_1)
+l4.place(x = 400, y = 100)
+l5 = tk.Label(root_1, text = "Ashank Project Work", fg = "black").place(x = 400, y = 300)
 root_1.mainloop()
 

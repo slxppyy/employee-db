@@ -4,7 +4,7 @@ def convert_to_bd(filename):
     with open(filename, "rb") as file:
         bd = file.read()
     return bd
-file = convert_to_bd(r"C:\Users\User\OneDrive\Documents\GitHub\mySQL\hi.jpg")
+file = convert_to_bd(r"C:\Users\User\OneDrive\Documents\GitHub\employee-db\Python Files\hi2.png")
 mydb = mql.connect(
         host = "localhost",
         database = "employee",
@@ -14,8 +14,8 @@ mydb = mql.connect(
             )
 print("Data connected successfuly.")
 cursor = mydb.cursor()
-sql = "insert into employees image values %s"
-val = (file,)
+sql = "update employees set emp_name = %s, emp_phone = %s, emp_sal = %s, image = %s where id = %s"
+val = ("Raj", "1234", "49857", file, 3 )
 cursor.execute(sql, val)
 mydb.commit() 
 mydb.close()
