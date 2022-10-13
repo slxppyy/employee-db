@@ -4,7 +4,7 @@ from PIL import Image, ImageTk
 root = tk.Tk()
 root.geometry("400x250")
 import mysql.connector as mql
-def photo():
+def photoview():
     mydb = mql.connect(
         host = "localhost",
         database = "employee",
@@ -12,7 +12,7 @@ def photo():
         password = "4JVkrk75Jamd"
         )
     cursor = mydb.cursor()
-    sql = "select * from employees where id = 3"
+    sql = "select * from employees where id = 15"
     cursor.execute(sql)
     result = cursor.fetchall()
     print(result)
@@ -21,5 +21,5 @@ def photo():
     l2 = tk.Label(root, image = img)
     l2.place(x = 0, y = 0)    
     l2.image = img
-photo()
+photoview()
 root.mainloop()

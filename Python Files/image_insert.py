@@ -4,7 +4,8 @@ def convert_to_bd(filename):
     with open(filename, "rb") as file:
         bd = file.read()
     return bd
-file = convert_to_bd(r"C:\Users\User\OneDrive\Documents\GitHub\employee-db\Python Files\hi2.png")
+#file = convert_to_bd(r"C:\Users\User\OneDrive\Documents\GitHub\employee-db\Python Files\hi2.png")
+file = convert_to_bd("C:/Users/User/Downloads/jefferson.jpg")
 mydb = mql.connect(
         host = "localhost",
         database = "employee",
