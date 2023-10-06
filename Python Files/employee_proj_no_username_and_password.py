@@ -87,7 +87,7 @@ def project():
         records = cursor.fetchall()
         e2.insert(0, records[0][1])
         e3.insert(0, records[0][2])
-        e4.insert(0, records[0][3]) # discuss
+        e4.insert(0, records[0][3])
         print(records)
         messagebox.showinfo("Information", "Records Found")
     def searchname():
